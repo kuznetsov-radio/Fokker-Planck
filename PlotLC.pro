@@ -1,5 +1,5 @@
 pro PlotLC
- restore, '..\Data\Evolution_noTurbulence.sav'
+ restore, 'Evolution_noTurbulence.sav'
  
  N_E=n_elements(E)
  N_mu=n_elements(mu)
@@ -34,7 +34,7 @@ pro PlotLC
  for k=0, N_int-1 do begin
   nbl=reform(nb[*, *, k])
   
-  device, file='..\Images\DS'+string(k, format='(I02)')+'.eps', xsize=8.9, ysize=6, font_size=8, bits_per_pixel=8, $
+  device, file='DS'+string(k, format='(I02)')+'.eps', xsize=8.9, ysize=6, font_size=8, bits_per_pixel=8, $
           /encapsulated, /color
   !X.MARGIN=[8, 1]
   !Y.MARGIN=[3.2, 0.5]
@@ -70,7 +70,7 @@ pro PlotLC
   ymax*=2
   ymin/=(mf ? 10 : 2)
   
-  device, file='..\Images\LC'+string(l, format='(I02)')+'.eps', xsize=8.9, ysize=6, font_size=8, bits_per_pixel=8, $
+  device, file='LC'+string(l, format='(I02)')+'.eps', xsize=8.9, ysize=6, font_size=8, bits_per_pixel=8, $
           /encapsulated, /color
   !X.MARGIN=[8, 1]
   !Y.MARGIN=[3.2, 0.5]
