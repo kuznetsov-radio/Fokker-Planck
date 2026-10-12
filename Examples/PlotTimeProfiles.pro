@@ -42,7 +42,8 @@ pro PlotTimeProfiles
     plot, t, nb_local, /ylog, yrange=max(nb[i, *, *], /nan)*[1.5d-4, 1.2], $
           ystyle=1, ytickformat='expnumber', $
           xtitle='!8t!3, s', ytitle='!8f!3', /nodata
-    xyouts, 6400, 5500, '!8E=!3'+string(E[k], format='(F7.3)')+' MeV', /device
+    a=min(abs(E-Elist[i]), l)
+    xyouts, 6400, 5500, '!8E=!3'+string(E[l], format='(F7.3)')+' MeV', /device
    endif else loadct, 34, /silent
    oplot, t, nb_local, color=255.0*k/(n_elements(slist)-1), thick=2
    xyouts, 8600, 5400-k*350, '!8z/L!3='+string(slist[k], format='(F5.3)'), /device, color=255.0*k/(n_elements(slist)-1)
